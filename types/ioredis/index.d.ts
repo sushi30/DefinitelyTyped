@@ -415,13 +415,13 @@ declare namespace IORedis {
 
         config(...args: any[]): any;
 
-        subscribe(...channels: any[]): any;
+        subscribe(...channels: any[], callback: (err: Error, res: number) => void): any;
 
-        unsubscribe(...channels: string[]): any;
+        unsubscribe(...channels: string[], callback: (err: Error, res: number) => void): any;
 
-        psubscribe(...patterns: string[]): any;
+        psubscribe(...patterns: string[], callback: (err: Error, res: number) => void): any;
 
-        punsubscribe(...patterns: string[]): any;
+        punsubscribe(...patterns: string[], callback: (err: Error, res: number) => void): any;
 
         publish(channel: string, message: string, callback: (err: Error, res: number) => void): void;
         publish(channel: string, message: string): Promise<number>;
